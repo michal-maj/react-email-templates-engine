@@ -2,5 +2,17 @@
   "welcome_title": "Welcome to Acme",
   "greeting": "Hello",
   "discount_line": "You have a discount waiting 🎉",
-  "footer": "You received this email because you signed up for Acme."
+  "footer": "You received this email because you signed up for Acme.",
+  "subject_prefix": "Security alert for",
+  "title": "New sign-in to your account",
+  "hello": "Hello",
+  "intro": "We noticed a new sign-in on",
+  "from_ip": "from IP",
+  "at": "at",
+  "action_prompt": "If this was you, no action is needed. If not, please review your account activity and secure your account.",
+  "review_button": "Review Sign-in",
+  "details_device": "Device",
+  "details_location": "Location",
+  "details_ip": "IP address",
+  "outro": "You can also change your password and enable two-factor authentication for added security."
 }
