@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { translator } from "../helpers/translator";
 import type { Lang } from "../@types";
 
-export const useTranslate = (lang: Lang) => {
+export const useTranslate = (lang: Lang = "en") => {
   const [t, setT] = useState<(key: string) => string>(
     () => (key: string) => key
   );

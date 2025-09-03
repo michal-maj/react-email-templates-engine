@@ -15,7 +15,7 @@ interface Props {
   lang: Lang;
 }
 
-export const Welcome: React.FC<Props> = ({ lang }) => {
+const Welcome: React.FC<Props> = ({ lang }) => {
   const { t } = useTranslate(lang);
 
   return (
@@ -65,3 +65,5 @@ export const Welcome: React.FC<Props> = ({ lang }) => {
     </html>
   );
 };
+
+export default Welcome;
