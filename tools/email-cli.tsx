@@ -11,7 +11,9 @@ import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import createEmotionServer from "@emotion/server/create-instance";
 import juice from "juice";
-import { jsx } from "@emotion/react";
+// import { jsx } from "@emotion/react";
+import { I18nProvider } from "../src/context/i18n";
+import { loadLocalesNode } from "./loadLocalesNode";
 
 // ---- Paths ----
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -105,11 +107,16 @@ async function renderTemplate({ templateName, lang, extraModel = {} }) {
   const { extractCriticalToChunks, constructStyleTagsFromChunks } =
     createEmotionServer(cache);
 
+  const dict = await loadLocalesNode(templateName, lang);
+
   // 2) Render with Emotion’s CacheProvider
-  const tree = jsx(CacheProvider, {
-    value: cache,
-    children: jsx(Template, { lang }),
-  });
+  const tree = (
+    <CacheProvider value={cache}>
+      <I18nProvider lang={lang} dict={dict}>
+        <Template lang={lang} />
+      </I18nProvider>
+    </CacheProvider>
+  );
 
   const bodyHtml = ReactDOMServer.renderToStaticMarkup(tree);
 
