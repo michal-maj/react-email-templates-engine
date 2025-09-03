@@ -1,3 +1,4 @@
+import React from "react";
 import { css } from "@emotion/react";
 import { SG } from "../helpers/SG";
 import { useTranslate } from "../hooks/useTranslate";

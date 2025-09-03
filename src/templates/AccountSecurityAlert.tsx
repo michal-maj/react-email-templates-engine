@@ -1,3 +1,4 @@
+import React from "react";
 import { css } from "@emotion/react";
 import type { TemplateProps } from "../@types";
 import { useTranslate } from "../hooks/useTranslate";
@@ -32,7 +33,7 @@ const muted = css`
   padding-top: 16px;
 `;
 
-export default function AccountSecurityAlert({ lang = "pl" }: TemplateProps) {
+const AccountSecurityAlert: React.FC<TemplateProps> = ({ lang = "pl" }) => {
   const { t } = useTranslate(lang);
 
   return (
@@ -132,4 +133,6 @@ export default function AccountSecurityAlert({ lang = "pl" }: TemplateProps) {
       </tbody>
     </table>
   );
-}
+};
+
+export default AccountSecurityAlert;
